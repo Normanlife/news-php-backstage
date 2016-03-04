@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>新闻后台</title>
+    <link rel="stylesheet" type="text/css" href="CSS/bootstrap.min.css">
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <style type="text/css">
+    .box {
+        width: 400px;
+        border: 1px solid #000;
+        margin: 15px;
+        padding: 10px;
+    }
+    
+    .box-lookup {
+        border: 1px solid #000;
+        margin: 15px;
+        padding: 10px;
+    }
+    
+    #rewrite {
+        display: none;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div>
+            <p>添加新闻内容</p>
+            <label for='cat'>新闻版块</label>
+            <select name='cat' class="cat">
+                <option value='0'>首页</option>
+                <option value='1'>百家</option>
+                <option value='2'>财经</option>
+                <option value='3'>娱乐</option>
+                <option value='4'>体育</option>
+            </select>
+        </div>
+        <div>
+            <label for="title">新闻标题</label>
+            <input type="text" name="title" class="title">
+        </div>
+        <div>
+            <label for="content">新闻内容</label>
+            <textarea type="text" name="content" class="content"></textarea>
+        </div>
+        <div>
+            <label for="img">新闻图片</label>
+            <input type="file" name="img" class="img">
+        </div>
+        <div>
+            <label for="time">编写时间</label>
+            <input type="date" name="time" class="time">
+        </div>
+        <div>
+            <button type="submit" value="提交" id="submit1">提交</button>
+            <button type="reset" value="重置">重置</button>
+        </div>
+    </div>
+    <div class="box-lookup">
+        <p>查询数据库新闻储存</p>
+        <div>
+            <label>需要查询的版块</label>
+            <select name='cat' class="cat1">
+                <option value='0'>首页</option>
+                <option value='1'>百家</option>
+                <option value='2'>财经</option>
+                <option value='3'>娱乐</option>
+                <option value='4'>体育</option>
+            </select>
+            <button type="submit" value="提交" id="submit2">提交</button>
+            <p>输出结果：</p>
+            <table id="something">
+                <th>id</th>
+                <th>title</th>
+                <th>content</th>
+                <th>img</th>
+                <th>time</th>
+            </table>
+        </div>
+    </div>
+    <div class="box">
+        <p>删除新闻</p>
+        <div>
+            <p>请选择需要删除的新闻的<b>ID号:</b></p>
+            <input type="text" value="请输入数字" id="deletenum">
+            <button id="submit3">确认删除</button>
+        </div>
+    </div>
+    <div class="box-lookup">
+        <p>更改已有的新闻</p>
+        <div>
+            <p>请选择需要修改的新闻的<b>ID号:</b></p>
+            <input type="text" value="请输入数字" id="rewirte-num">
+            <button id="submit4">确定</button>
+        </div>
+        <div id="rewrite">
+            <div>
+                <span>ID号:</span>
+                <input type="text" id="reid" readonly id="reid"></input>
+            </div>
+            <div>
+            <span>版块:</span>
+            	<select name='cat' id="recat">
+                <option value='0'>首页</option>
+                <option value='1'>百家</option>
+                <option value='2'>财经</option>
+                <option value='3'>娱乐</option>
+                <option value='4'>体育</option>
+            </select>
+            </div>
+            <div>
+                <span>标题:</span>
+                <input type="text" id="retitle"></input>
+            </div>
+            <div>
+                <span>内容:</span>
+                <textarea type="text" id="recontent"></textarea>
+            </div>
+            <div>
+                <span>图片地址:</span>
+                <input type="text" id="reimg"></input>
+            </div>
+            <div>
+                <span>时间:</span>
+                <input type="date" id="retime"></input>
+            </div>
+            <div>
+                <button type="submit" id="submit5">确认修改</button>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="JS/backstageapp.js"></script>
+</body>
+
+</html>
